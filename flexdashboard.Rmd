@@ -5,26 +5,52 @@ date: "11/13/2017"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r setup}
+
+library(flexdashboard)
+library(tidyverse)
+library(janitor)
+library(stringr)
+library(forcats)
+library(viridis)
+library(plotly)
+library(magrittr)
+library(readr)
+
+
+instacart = read_csv("./data/instacart_train_data.csv.zip")
+
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Column {data-width=650}
+-----------------------------------------------------------------------
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Chart A
 
-```{r cars}
-summary(cars)
+```{r}
+
+
+
+
 ```
 
-## Including Plots
+Column {data-width=350}
+-----------------------------------------------------------------------
 
-You can also embed plots, for example:
+### Chart B
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+
+
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Chart C
+
+```{r}
+
+
+```
