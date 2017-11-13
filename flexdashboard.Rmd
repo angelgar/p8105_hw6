@@ -1,13 +1,14 @@
 ---
-title: "Dashboard"
-author: "Angel Garcia de la Garza"
-date: "11/13/2017"
-output: html_document
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
+  
+```{r setup, include=FALSE}
 
-
-```{r setup}
-
+library(flexdashboard)
 library(flexdashboard)
 library(tidyverse)
 library(janitor)
@@ -21,36 +22,28 @@ library(readr)
 
 instacart = read_csv("./data/instacart_train_data.csv.zip")
 
-
 ```
-
 
 Column {data-width=650}
 -----------------------------------------------------------------------
-
+  
 ### Chart A
-
+  
 ```{r}
-
-
-
 
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
-
+  
 ### Chart B
-
+  
 ```{r}
-
-
 
 ```
 
 ### Chart C
 
 ```{r}
-
 
 ```
