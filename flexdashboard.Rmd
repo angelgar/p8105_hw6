@@ -24,26 +24,46 @@ instacart = read_csv("./data/instacart_train_data.csv.zip")
 
 ```
 
+<<<<<<< HEAD
 Column {data-width=650}
 -----------------------------------------------------------------------
   
 ### Chart A
   
+=======
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scatterplot
+
+>>>>>>> 59dc9d76ff81622fa0cdd580a59c619c3cafedb9
 ```{r}
 
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
+<<<<<<< HEAD
   
 ### Chart B
   
+=======
+
+### boxplot
+
+>>>>>>> 59dc9d76ff81622fa0cdd580a59c619c3cafedb9
 ```{r}
 
 ```
 
-### Chart C
+### Bar chart
 
 ```{r}
 
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 59dc9d76ff81622fa0cdd580a59c619c3cafedb9
