@@ -1,7 +1,19 @@
 ---
-title: "Holy cow!"
+title: "Instacart Data Visualization"
 ---
 
-### I have a webpage!
+### Introduction
 
-And I can put all kinds of stuff on it!
+This is assigment 6 from Data Science I. In this assigment we aim to create a dashboard and a Shiny app to visualize the Instacart dataset used in class. You can click on the link on the top to our about page and our flexdashboard. 
+
+### Instacart Data
+
+You can find more information to the Instacart dataset on the Data Science website [here](http://jeffgoldsmith.com/DSI/dataset_instacart.html).
+
+### Felxdashboard
+
+This is the [link]() to the flexdashboard to visualize this dataset.
+
+### Shiny App
+
+This is the [link]() to the Shiny to visualize this dataset.

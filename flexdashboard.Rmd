@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Instacart Visualization"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -18,18 +18,40 @@ library(viridis)
 library(plotly)
 library(magrittr)
 library(readr)
+library(scales)
 
 
 instacart = read_csv("./data/instacart_train_data.csv.zip")
 
 ```
 
+
+```{r data_tidy}
+
+instacart = read_csv("./data/instacart_train_data.csv.zip") %>%
+  clean_names() %>%
+  distinct()
+
+
+```
+
+
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Department Frequency
 
-```{r}
+```{r department_frequency}
+
+scatter_ggplot = instacart %>% 
+  count(department) %>% 
+  mutate(Department = fct_reorder(department, n)) %>% 
+  ggplot(aes(x = Department, y = n, fill = Department)) +
+    geom_bar(stat = "identity") + 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+    scale_y_continuous(name = "N", labels = scales::unit_format("k", 1e-3)) 
+
+ggplotly(scatter_ggplot)
 
 ```
 
