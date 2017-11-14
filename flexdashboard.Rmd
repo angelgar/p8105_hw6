@@ -20,9 +20,6 @@ library(magrittr)
 library(readr)
 library(scales)
 
-
-instacart = read_csv("./data/instacart_train_data.csv.zip")
-
 ```
 
 
