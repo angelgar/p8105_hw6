@@ -40,15 +40,15 @@ Column {data-width=650}
 
 ```{r department_frequency}
 
-scatter_ggplot = instacart %>% 
+barplot_department_ggplot = instacart %>% 
   count(department) %>% 
   mutate(Department = fct_reorder(department, n)) %>% 
-  ggplot(aes(x = Department, y = n, fill = Department)) +
+  ggplot(aes(x = department, y = n, fill = department)) +
     geom_bar(stat = "identity") + 
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
     scale_y_continuous(name = "N", labels = scales::unit_format("k", 1e-3)) 
 
-ggplotly(scatter_ggplot)
+ggplotly(barplot_department_ggplot)
 
 ```
 
