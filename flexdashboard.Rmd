@@ -9,7 +9,6 @@ output:
 ```{r setup, include=FALSE}
 
 library(flexdashboard)
-library(flexdashboard)
 library(tidyverse)
 library(janitor)
 library(stringr)
@@ -42,7 +41,7 @@ Column {data-width=650}
 
 barplot_department_ggplot = instacart %>% 
   count(department) %>% 
-  mutate(Department = fct_reorder(department, n)) %>% 
+  mutate(department = fct_reorder(department, n)) %>% 
   ggplot(aes(x = department, y = n, fill = department)) +
     geom_bar(stat = "identity") + 
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
@@ -55,15 +54,32 @@ ggplotly(barplot_department_ggplot)
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Most Popular Products by Aisle in the Produce Department
 
-```{r}
+```{r popular products}
+
+barplot_popular_produce = instacart %>% 
+  filter(department == "produce") %>% 
+  group_by(aisle) %>% 
+  count(product_name) %>% 
+  top_n(2) %>% 
+  ggplot(aes(x = aisle, y = n, fill = product_name)) +
+        geom_bar(stat="identity", position="dodge") +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+        labs(title = "Most Popular Products by Aisle in Produce Department")
+
+ggplotly(barplot_popular_produce)
 
 ```
 
-### Chart C
+### Distribution of Order Hour of Day by Department
 
-```{r}
+```{r boxplot order hour}
+
+boxplot_order_hour = instacart %>% 
+  ggplot(aes(x = department, y = order_hour_of_day, fill = department)) + geom_boxplot()
+
+ggplotly(boxplot_order_hour)
 
 ```
 
