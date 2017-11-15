@@ -77,7 +77,10 @@ ggplotly(barplot_popular_produce)
 ```{r boxplot order hour}
 
 boxplot_order_hour = instacart %>% 
-  ggplot(aes(x = department, y = order_hour_of_day, fill = department)) + geom_boxplot()
+  ggplot(aes(x = department, y = order_hour_of_day, fill = department)) + 
+        geom_boxplot() +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+        labs(title = "Order Hour of Day by Department")
 
 ggplotly(boxplot_order_hour)
 
