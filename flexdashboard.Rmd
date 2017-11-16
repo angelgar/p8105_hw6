@@ -36,7 +36,7 @@ instacart = read_csv("./data/instacart_train_data.csv.zip") %>%
 ```
 
 
-Column {data-width=650}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Department Frequency
@@ -55,12 +55,12 @@ ggplotly(barplot_department_ggplot)
 
 ```
 
-Column {data-width=350}
+Column {.tabset data-width=500}
 -----------------------------------------------------------------------
 
 ### Most Popular Products by Aisle in the Produce Department
 
-```{r popular products}
+```{r popular_products}
 
 barplot_popular_produce = instacart %>% 
   filter(department == "produce") %>% # only keep observations of items in produce dept.
@@ -68,17 +68,18 @@ barplot_popular_produce = instacart %>%
   count(product_name) %>% # count no. product sold
   top_n(2) %>% # keep the top 2 most sold products in each aisle
   ggplot(aes(x = aisle, y = n, fill = product_name)) +
-        geom_bar(stat="identity", position="dodge") +
+        geom_bar(stat = "identity", position = "dodge") +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-        labs(title = "Most Popular Products by Aisle in Produce Department")
+        labs(title = "Most Popular Products by Aisle in Produce Department") + 
+        guides(fill = FALSE)
 
-ggplotly(barplot_popular_produce)
+ggplotly(barplot_popular_produce) %>% layout(showlegend = FALSE)
 
 ```
 
 ### Distribution of Order Hour of Day by Department
 
-```{r boxplot order hour}
+```{r boxplot_order_hour}
 
 # distribution of what time of day items were sold by dept. 
 
