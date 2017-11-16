@@ -8,6 +8,8 @@ output:
   
 ```{r setup, include=FALSE}
 
+# Load libraries
+
 library(flexdashboard)
 library(tidyverse)
 library(janitor)
@@ -23,6 +25,8 @@ library(scales)
 
 
 ```{r data_tidy}
+
+# Load the data and clean names
 
 instacart = read_csv("./data/instacart_train_data.csv.zip") %>%
   clean_names() %>%
@@ -40,9 +44,9 @@ Column {data-width=650}
 ```{r department_frequency}
 
 barplot_department_ggplot = instacart %>% 
-  count(department) %>% 
-  mutate(department = fct_reorder(department, n)) %>% 
-  ggplot(aes(x = department, y = n, fill = department)) +
+  count(department) %>% # count the number of items sold in each department
+  mutate(department = fct_reorder(department, n)) %>% # reorder department by n
+  ggplot(aes(x = department, y = n, fill = department)) + # barplot of no.items sold by dept.
     geom_bar(stat = "identity") + 
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
     scale_y_continuous(name = "N", labels = scales::unit_format("k", 1e-3)) 
@@ -59,10 +63,10 @@ Column {data-width=350}
 ```{r popular products}
 
 barplot_popular_produce = instacart %>% 
-  filter(department == "produce") %>% 
-  group_by(aisle) %>% 
-  count(product_name) %>% 
-  top_n(2) %>% 
+  filter(department == "produce") %>% # only keep observations of items in produce dept.
+  group_by(aisle) %>% # group by aisle in produce dept.
+  count(product_name) %>% # count no. product sold
+  top_n(2) %>% # keep the top 2 most sold products in each aisle
   ggplot(aes(x = aisle, y = n, fill = product_name)) +
         geom_bar(stat="identity", position="dodge") +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
@@ -75,6 +79,8 @@ ggplotly(barplot_popular_produce)
 ### Distribution of Order Hour of Day by Department
 
 ```{r boxplot order hour}
+
+# distribution of what time of day items were sold by dept. 
 
 boxplot_order_hour = instacart %>% 
   ggplot(aes(x = department, y = order_hour_of_day, fill = department)) + 

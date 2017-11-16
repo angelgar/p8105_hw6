@@ -4,7 +4,7 @@ title: "Instacart Data Visualization"
 
 ### Introduction
 
-This is assigment 6 from Data Science I. In this assigment we aim to create a dashboard and a Shiny app to visualize the Instacart dataset used in class. You can click on the link on the top to our about page and our flexdashboard. 
+This is assignment 6 from Data Science I. In this assignment we aim to create a dashboard and a Shiny app to visualize the Instacart dataset used in class. You can click on the link on the top to our about page and our flexdashboard. 
 
 ### Instacart Data
 
