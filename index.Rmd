@@ -12,8 +12,8 @@ You can find more information to the Instacart dataset on the Data Science websi
 
 ### Flexdashboard
 
-This is the [link](https://angelgar.github.io/p8105_hw6/flexdashboard.html) to the flexdashboard to visualize this dataset.
+This is the [link](https://angelgar.github.io/p8105_hw6/) to the github repository including this flexdashboard and website
 
-### Shiny App
+### Shiny Dashboard
 
-This is the [link](https://angelgar.shinyapps.io/shiny_instacart/) to the Shiny to visualize this dataset.
+This is the [link](https://angelgar.github.io/p8105_hw6_shiny/) to the github repository including the shiny dashboard
