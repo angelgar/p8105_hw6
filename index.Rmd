@@ -8,12 +8,14 @@ This is assignment 6 from Data Science I. In this assignment we aim to create a 
 
 ### Instacart Data
 
+We used the instacart data from class. This dataset contains 1,384,617 observations of 131,209 users, where each row in a product in an order. We proceeded to clean the names of the dataset and only keep unique observations. 
+
 You can find more information to the Instacart dataset on the Data Science website [here](http://jeffgoldsmith.com/DSI/dataset_instacart.html).
 
 ### Flexdashboard
 
-This is the [link](https://angelgar.github.io/p8105_hw6/) to the github repository including this flexdashboard and website
+This is the [link](https://github.com/angelgar/p8105_hw6) to the github repository including this flexdashboard and website
 
 ### Shiny Dashboard
 
-This is the [link](https://angelgar.github.io/p8105_hw6_shiny/) to the github repository including the shiny dashboard
+This is the [link](https://github.com/angelgar/p8105_hw6_shiny) to the github repository including the shiny dashboard
